@@ -11,13 +11,12 @@
 ## Nome do grupo
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 5</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 6</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 7</a>
+- <a href="https://github.com/nDaviii/">Davi Nascimento de Jesus</a>
+- <a href="https://github.com/ftbinteli/">Fernando Tavares Bertholdo</a>
+- <a href="https://github.com/iisabelledantas/">Isabelle Dantas</a> 
+- <a href="https://www.linkedin.com/in/victorbarq/">João de Ouro Preto</a> 
+- <a href="https://www.linkedin.com/in/kauarodriguessss/">Kauã Rodrigues dos Santos</a>
+- <a href="https://www.linkedin.com/in/victorbarq/">Moyses Anijar</a>
 
 ## 👩‍🏫 Professores:
 ### Orientador(a) 

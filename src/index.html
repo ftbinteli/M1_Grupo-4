@@ -21,15 +21,17 @@
             }
         </style>
         
-        <!-- Importa o arquivo/script/framework Phaser.js para desenvolvimento de jogos -->
-        <script src="phaser.js"></script>
-        
+        <!-- Importa o arquivo/script/framework Phaser.js para desenvolvimento de jogos através do CDN-->
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
     </head>
 
-
-    <body>
-        <!-- A linha abaixo importa um script/arquivo específico esteja em um arquivo externo ao HTML presente -->
-        <script src="game.js"></script>
-    </body>
+<body>
+    <!-- Importa main.js como um módulo -->
+    <script type="module" src="main.js"></script>
+    <script src="scenes/StartScreen.js"></script>
+    <script src="scenes/OASplashScreen.js"></script>
+    <script src="scenes/GOATSplashScreen.js"></script>
+    <script src="scenes/TitleScreen.js"></script>
+</body>
 
 </html>

@@ -4,15 +4,15 @@ class GOATSplashScreen extends Phaser.Scene {
   }
 
   preload() {
-      // Load assets
+      // Carregar recursos
       this.load.image('GOATLogo', '/M1_Grupo-4/assets/GOATLogo.png');
   }
 
   create() {
-      // Display logo with fade in animation
+      // Exibir logo com animação de fade in
       const logo = this.add.image(this.game.config.width / 2, this.game.config.height / 2, 'GOATLogo').setAlpha(0);
 
-      logo.setScale(0.1); // Ajuste da escala da imagem conforme necessário
+      logo.setScale(0.1); // Ajustar escala da imagem conforme necessário
 
       this.tweens.add({
           targets: logo,
@@ -20,7 +20,7 @@ class GOATSplashScreen extends Phaser.Scene {
           duration: 1000,
           ease: 'Linear',
           onComplete: () => {
-              // Fade out logo after 2 seconds
+              // Fade out a logo após 2 segundos
               this.time.delayedCall(2000, () => {
                   this.tweens.add({
                       targets: logo,
@@ -28,7 +28,7 @@ class GOATSplashScreen extends Phaser.Scene {
                       duration: 1000,
                       ease: 'Linear',
                       onComplete: () => {
-                          // Transition to TitleScreen after logo fades out
+                          // Transição para a cena TitleScreen após fade out completo
                           this.scene.start('TitleScreen');
                       }
                   });

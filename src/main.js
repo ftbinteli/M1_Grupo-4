@@ -7,9 +7,9 @@ var config = {
     width: 1200,
     height: 600,
     backgroundColor: '#F1EFED',
-    // scene: [StartScreen, OASplashScreen, GOATSplashScreen, TitleScreen],
-    scene: [TitleScreen],
+    scene: [StartScreen, OASplashScreen, GOATSplashScreen, TitleScreen],
+    // scene: [TitleScreen],
 };
 
-// Create game instance
+// Criação de uma instância do jogo
 const game = new Phaser.Game(config);

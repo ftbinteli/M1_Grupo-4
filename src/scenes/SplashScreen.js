@@ -4,15 +4,15 @@ class SplashScreen extends Phaser.Scene {
     }
 
     preload() {
-        // Load assets for OA Splash Screen
+        // Carrega os recursos cena
         this.load.image('logo', '/M1_Grupo-4/assets/OALogo.png');
     }
 
     create() {
-        // Display logo with fade in animation
+        // Exibe o logo com animação de fade in
         const logo = this.add.image(this.game.config.width / 2, this.game.config.height / 2, 'logo').setAlpha(0);
 
-        logo.setScale(1); // Ajuste da escala da imagem conforme necessário
+        logo.setScale(1); // Ajusta a escala da imagem conforme necessário
 
         this.tweens.add({
             targets: logo,
@@ -20,7 +20,7 @@ class SplashScreen extends Phaser.Scene {
             duration: 1000,
             ease: 'Linear',
             onComplete: () => {
-                // Fade out logo after 2 seconds
+                // Fade out do logo
                 this.time.delayedCall(2000, () => {
                     this.tweens.add({
                         targets: logo,
@@ -28,7 +28,7 @@ class SplashScreen extends Phaser.Scene {
                         duration: 1000,
                         ease: 'Linear',
                         onComplete: () => {
-                            // Transition to GOATSplashScreen after logo fades out
+                            // Transição para a tela GOATSplashScreen após fade out
                             this.scene.start('GOATSplashScreen');
                         }
                     });
@@ -44,15 +44,15 @@ class GOATSplashScreen extends Phaser.Scene {
     }
 
     preload() {
-        // Load assets for GOAT Splash Screen
+        // Carrega os recursos para a tela de abertura do GOAT
         this.load.image('logo', '/M1_Grupo-4/assets/GOATLogo.png');
     }
 
     create() {
-        // Display logo with fade in animation
+        // Exibe o logo com animação de fade in
         const logo = this.add.image(this.game.config.width / 2, this.game.config.height / 2, 'logo').setAlpha(0);
 
-        logo.setScale(1); // Ajuste da escala da imagem conforme necessário
+        logo.setScale(1); // Ajusta a escala da imagem conforme necessário
 
         this.tweens.add({
             targets: logo,
@@ -60,7 +60,7 @@ class GOATSplashScreen extends Phaser.Scene {
             duration: 1000,
             ease: 'Linear',
             onComplete: () => {
-                // Fade out logo after 2 seconds
+                // Desvanece o logo após 2 segundos
                 this.time.delayedCall(2000, () => {
                     this.tweens.add({
                         targets: logo,
@@ -68,7 +68,7 @@ class GOATSplashScreen extends Phaser.Scene {
                         duration: 1000,
                         ease: 'Linear',
                         onComplete: () => {
-                            // Transition to TitleScreen after logo fades out
+                            // Transição para a tela TitleScreen após o logo desaparecer
                             this.scene.start('TitleScreen');
                         }
                     });

@@ -5,9 +5,10 @@
 var config = {
     type: Phaser.AUTO,
     width: 1200,
-    height: 900,
+    height: 600,
     backgroundColor: '#F1EFED',
-    scene: [StartScreen, OASplashScreen, GOATSplashScreen, TitleScreen],
+    // scene: [StartScreen, OASplashScreen, GOATSplashScreen, TitleScreen],
+    scene: [TitleScreen],
 };
 
 // Create game instance

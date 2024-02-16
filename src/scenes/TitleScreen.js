@@ -3,36 +3,145 @@ class TitleScreen extends Phaser.Scene {
         super({ key: 'TitleScreen' });
     }
 
+    preload() {
+        // Carregar fonte e imagens
+        this.load.image('TitleScreenBG', '/M1_Grupo-4/assets/TitleScreenBG.png');
+        this.load.image('TitleScreenLogo', '/M1_Grupo-4/assets/TitleScreenLogo.png');
+        this.load.image('OracleTag', '/M1_Grupo-4/assets/OracleTag.png');
+    }
+
     create() {
-        // Exibir fundo sólido
-        this.add.graphics()
-            .fillStyle(0xffffff, 1)
-            .fillRect(0, 0, this.game.config.width, this.game.config.height);
+        // Definir imagem de fundo
+        const background = this.add.image(0, 0, 'TitleScreenBG').setOrigin(0);
 
-        // Exibir título centralizado
-        const title = this.add.text(this.game.config.width / 2, 100, 'Título do Jogo', {
-            fontSize: '48px',
-            fontFamily: 'Arial',
-            color: '#000',
+        // Esticar a imagem de fundo para preencher a tela do jogo
+        background.displayWidth = this.game.config.width;
+        background.displayHeight = this.game.config.height;
+
+        const gameWidth = this.game.config.width;
+        const logoScale = 0.15; // Ajuste a escala conforme necessário
+        
+        // Carregar e posicionar a tag Oracle para que obedeça o brand guidelines
+        const oracleTag = this.add.image(gameWidth - (512 * logoScale), 0, 'OracleTag').setOrigin(1, 0);
+        oracleTag.setScale(logoScale);
+
+        // // Configurar elementos de texto
+        // this.add.text(this.cameras.main.centerX, 100, 'Bem Vindo', {
+        //     fontFamily: 'Oraclesans',
+        //     fontSize: '48px',
+        //     color: '#ffffff'
+        // }).setOrigin(0.5);
+
+        // Configurar imagem do logo
+        this.add.image(this.cameras.main.centerX, 200, 'TitleScreenLogo').setScale(0.5);
+        
+        // Criar gráficos para o botão
+        const graphics = this.add.graphics();
+        graphics.fillStyle(0xff0000, 1); // Definir a cor de preenchimento do botão como vermelho
+        
+        // Criar um retângulo com bordas arredondadas
+        graphics.fillRoundedRect(this.cameras.main.centerX - 100, 425 - 45, 200, 90, 20);
+        graphics.setInteractive(new Phaser.Geom.Rectangle(this.cameras.main.centerX - 100, 425 - 45, 200, 90), Phaser.Geom.Rectangle.Contains);
+    
+        // Configurar texto do botão de jogar
+        const playButtonText = this.add.text(this.cameras.main.centerX, 425, 'JOGAR', {
+            fontFamily: 'Oraclesans',
+            fontSize: '32px',
+            color: '#F1EFED',
         }).setOrigin(0.5);
+        playButtonText.setShadow(2, 2, 'rgba(0,0,0,0.5)', 2);
+    
+        // // Button interaction for hover state
+        // playButton.on('pointerover', () => {
+        //     this.game.canvas.style.cursor = 'pointer';
+        //     playButton.clear(); // Clear the previous button state
+        //     playButton.fillStyle(0xff5555, 1); // Lighter red color
+        //     playButton.fillRoundedRect(this.cameras.main.centerX - 100, 425 - 45, 200, 90, 20);
+        // });
 
-        // Exibir botão de iniciar o jogo
-        const startButton = this.add.text(this.game.config.width / 2, 200, 'Iniciar Jogo', {
-            fontSize: '24px',
-            fontFamily: 'Arial',
-            color: '#000',
-            backgroundColor: '#fff',
-            padding: {
-                x: 20,
-                y: 10
-            }
-        }).setOrigin(0.5);
+        // playButton.on('pointerout', () => {
+        //     this.game.canvas.style.cursor = 'default';
+        //     playButton.clear(); // Clear the hover state
+        //     playButton.fillStyle(0xff0000, 1); // Original dark red color
+        //     playButton.fillRoundedRect(this.cameras.main.centerX - 100, 425 - 45, 200, 90, 20);
+        // });       
 
-        // Definir comportamento interativo para o botão de iniciar
-        startButton.setInteractive();
-        startButton.on('pointerdown', () => {
-            // Adicionar funcionalidade para iniciar o jogo
-            console.log('Iniciando o jogo...');
+        // Adicionar interatividade ao objeto gráfico em vez do texto
+        graphics.on('pointerdown', () => {
+            // Navegar para a próxima cena quando o botão for clicado
+            this.scene.start('NextScene');
         });
+
+        this.cameras.main.fadeIn(1000, 0, 0, 0);
+
+
+        // Configurar botão de jogar
+        // const playButton = this.add.text(this.cameras.main.centerX, 400, 'Jogar', {
+        //     fontFamily: 'Oraclesans',
+        //     fontSize: '24px',
+        //     color: '#ffffff',
+        //     backgroundColor: '#ff0000',
+        //     padding: {
+        //         x: 40,
+        //         y: 30
+        //     },
+        //     align: 'center',
+        //     borderRadius: 10 // Definir o raio da borda para deixar os cantos arredondados
+        // }).setOrigin(0.5);
+
+        // // Adicionar interatividade ao botão
+        // playButton.setInteractive();
+        // playButton.on('pointerdown', () => {
+        //     // Navegar para a próxima cena quando o botão for clicado
+        //     this.scene.start('NextScene');
+        // });
     }
 }
+
+
+
+
+
+
+
+
+
+
+// class TitleScreen extends Phaser.Scene {
+//     constructor() {
+//         super({ key: 'TitleScreen' });
+//     }
+
+//     create() {
+//         // Exibir fundo sólido
+//         this.add.graphics()
+//             .fillStyle(0xffffff, 1)
+//             .fillRect(0, 0, this.game.config.width, this.game.config.height);
+
+//         // Exibir título centralizado
+//         const title = this.add.text(this.game.config.width / 2, 100, 'Título do Jogo', {
+//             fontSize: '48px',
+//             fontFamily: 'Arial',
+//             color: '#000',
+//         }).setOrigin(0.5);
+
+//         // Exibir botão de iniciar o jogo
+//         const startButton = this.add.text(this.game.config.width / 2, 200, 'Iniciar Jogo', {
+//             fontSize: '24px',
+//             fontFamily: 'Arial',
+//             color: '#000',
+//             backgroundColor: '#fff',
+//             padding: {
+//                 x: 20,
+//                 y: 10
+//             }
+//         }).setOrigin(0.5);
+
+//         // Definir comportamento interativo para o botão de iniciar
+//         startButton.setInteractive();
+//         startButton.on('pointerdown', () => {
+//             // Adicionar funcionalidade para iniciar o jogo
+//             console.log('Iniciando o jogo...');
+//         });
+//     }
+// }

@@ -25,8 +25,8 @@ class TitleScreen extends Phaser.Scene {
         const oracleTag = this.add.image(gameWidth - (512 * logoScale), 0, 'OracleTag').setOrigin(1, 0);
         oracleTag.setScale(logoScale);
 
-        // // Configurar elementos de texto
-        // this.add.text(this.cameras.main.centerX, 100, 'Bem Vindo', {
+        // // Configurar e adicionar texto de Bem-vindo
+        // this.add.text(this.cameras.main.centerX, 100, 'Bem-Vindo', {
         //     fontFamily: 'Oraclesans',
         //     fontSize: '48px',
         //     color: '#ffffff'
@@ -39,11 +39,11 @@ class TitleScreen extends Phaser.Scene {
         const graphics = this.add.graphics();
         graphics.fillStyle(0xff0000, 1); // Definir a cor de preenchimento do botão como vermelho
         
-        // Criar um retângulo com bordas arredondadas
+        // Criar um retângulo com bordas arredondadas (botão)
         graphics.fillRoundedRect(this.cameras.main.centerX - 100, 425 - 45, 200, 90, 20);
         graphics.setInteractive(new Phaser.Geom.Rectangle(this.cameras.main.centerX - 100, 425 - 45, 200, 90), Phaser.Geom.Rectangle.Contains);
     
-        // Configurar texto do botão de jogar
+        // Adicionar e configurar o texto do botão de jogar sobre o botão
         const playButtonText = this.add.text(this.cameras.main.centerX, 425, 'JOGAR', {
             fontFamily: 'Oraclesans',
             fontSize: '32px',
@@ -51,14 +51,15 @@ class TitleScreen extends Phaser.Scene {
         }).setOrigin(0.5);
         playButtonText.setShadow(2, 2, 'rgba(0,0,0,0.5)', 2);
     
-        // // Button interaction for hover state
+        // Interação alteração de cor do botão quando mouse em cima
         // playButton.on('pointerover', () => {
         //     this.game.canvas.style.cursor = 'pointer';
         //     playButton.clear(); // Clear the previous button state
         //     playButton.fillStyle(0xff5555, 1); // Lighter red color
         //     playButton.fillRoundedRect(this.cameras.main.centerX - 100, 425 - 45, 200, 90, 20);
         // });
-
+        
+        // Interação alteração de cor do botão quando mouse em cima
         // playButton.on('pointerout', () => {
         //     this.game.canvas.style.cursor = 'default';
         //     playButton.clear(); // Clear the hover state
@@ -70,31 +71,13 @@ class TitleScreen extends Phaser.Scene {
         graphics.on('pointerdown', () => {
             // Navegar para a próxima cena quando o botão for clicado
             this.scene.start('NextScene');
+            // Adicionar funcionalidade para iniciar o jogo
+            // console.log('Iniciando o jogo...')
         });
 
         this.cameras.main.fadeIn(1000, 0, 0, 0);
 
 
-        // Configurar botão de jogar
-        // const playButton = this.add.text(this.cameras.main.centerX, 400, 'Jogar', {
-        //     fontFamily: 'Oraclesans',
-        //     fontSize: '24px',
-        //     color: '#ffffff',
-        //     backgroundColor: '#ff0000',
-        //     padding: {
-        //         x: 40,
-        //         y: 30
-        //     },
-        //     align: 'center',
-        //     borderRadius: 10 // Definir o raio da borda para deixar os cantos arredondados
-        // }).setOrigin(0.5);
-
-        // // Adicionar interatividade ao botão
-        // playButton.setInteractive();
-        // playButton.on('pointerdown', () => {
-        //     // Navegar para a próxima cena quando o botão for clicado
-        //     this.scene.start('NextScene');
-        // });
     }
 }
 

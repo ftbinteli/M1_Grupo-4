@@ -5,9 +5,9 @@ class TitleScreen extends Phaser.Scene {
 
     preload() {
         // Carregar fonte e imagens
-        this.load.image('TitleScreenBG', '/M1_Grupo-4/assets/TitleScreenBG.png');
-        this.load.image('TitleScreenLogo', '/M1_Grupo-4/assets/TitleScreenLogo.png');
-        this.load.image('OracleTag', '/M1_Grupo-4/assets/OracleTag.png');
+        this.load.image('TitleScreenBG', '/assets/TitleScreenBG.png');
+        this.load.image('TitleScreenLogo', '/assets/TitleScreenLogo.png');
+        this.load.image('OracleTag', '/assets/OracleTag.png');
     }
 
     create() {

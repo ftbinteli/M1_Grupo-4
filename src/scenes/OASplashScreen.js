@@ -5,7 +5,7 @@ class OASplashScreen extends Phaser.Scene {
   
     preload() {
         // Carregar assets
-        this.load.image('OALogo', '/M1_Grupo-4/assets/OALogo.png');
+        this.load.image('OALogo', '/assets/OALogo.png');
     }
   
     create() {

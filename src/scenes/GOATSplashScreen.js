@@ -5,7 +5,7 @@ class GOATSplashScreen extends Phaser.Scene {
 
   preload() {
       // Carregar recursos
-      this.load.image('GOATLogo', '/M1_Grupo-4/assets/GOATLogo.png');
+      this.load.image('GOATLogo', '/assets/GOATLogo.png');
   }
 
   create() {

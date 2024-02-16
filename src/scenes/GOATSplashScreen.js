@@ -5,12 +5,12 @@ class GOATSplashScreen extends Phaser.Scene {
 
   preload() {
       // Load assets
-      this.load.image('logo', '/assets/GOATLogo.png');
+      this.load.image('GOATLogo', '/M1_Grupo-4/assets/GOATLogo.png');
   }
 
   create() {
       // Display logo with fade in animation
-      const logo = this.add.image(this.game.config.width / 2, this.game.config.height / 2, 'logo').setAlpha(0);
+      const logo = this.add.image(this.game.config.width / 2, this.game.config.height / 2, 'GOATLogo').setAlpha(0);
 
       logo.setScale(0.1); // Ajuste da escala da imagem conforme necessário
 

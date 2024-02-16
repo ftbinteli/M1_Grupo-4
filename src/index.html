@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Jornada do Educador</title>
 
-    <div class="bem-vindo">
-        <img src="/src/Imagens/Logo1.png">
-        <h1>Bem Vindo</h1>
-        <a href="/src/cena1.html" class="botao-jogar">Jogar</a>
-    </div>
+    <head>
+        <!-- Definição da codificação da página para que utilize caracteres UTF-8 em sua exibição-->
+        <meta charset="UTF-8">
 
-    <script src="phaser.js"></script>
-</head>
+        <!-- Configura a visualização e dimensões da página de acordo com o dispositivo que está acessando-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Define o título da página que aparece na aba do navegador -->
+        <title>Jornada do Educador</title>
+
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+        </style>
+        
+        <!-- Importa o arquivo/script/framework Phaser.js para desenvolvimento de jogos através do CDN-->
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+        
+        <!-- Importa o arquivo CSS para estilização -->
+        <link rel="stylesheet" href="style.css">
+    </head>
 
 <body>
-    <script src="startScene.js"></script>
+    <!-- Importa main.js como um módulo, seguido das cenas do jogo -->
+    <script type="module" src="main.js"></script>
+    <script src="scenes/StartScreen.js"></script>
+    <script src="scenes/OASplashScreen.js"></script>
+    <script src="scenes/GOATSplashScreen.js"></script>
+    <script src="scenes/TitleScreen.js"></script>
 </body>
+
 </html>
